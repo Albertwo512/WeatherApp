@@ -1,11 +1,11 @@
 {% extends './form.html' %}
 
 {% block body%}
-    <h1>Aplicación del Clima</h1>
-    <form action="/clima" method="post">
-        <label for="ciudad">Ingresa una ciudad:</label>
-        <input type="text" name="ciudad" id="ciudad" value="{{ ciudad }}">
-        <input type="submit" value="Enviar">
-    </form>
-
+<ul class="texto-luz">
+    <li class="list-group-item"><h1>Clima en {{ ciudad }}</h1></li>
+    <li class="list-group-item"><p>Temperatura: {{ temperatura }}°C</p></li>
+    <li class="list-group-item"><p>Velocidad del Viento: {{ velocidad_viento }} m/s</p></li>
+    <li class="list-group-item"><p>Latitud: {{ latitud }}</p></li>
+    <li class="list-group-item"><p>Descripción: {{ descripcion }}</p></li>
+  </ul>
 {% endblock %}
