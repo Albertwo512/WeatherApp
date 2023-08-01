@@ -1,0 +1,11 @@
+{% extends './form.html' %}
+
+{% block body%}
+<ul class="list-group list-group-flush">
+    <li class="list-group-item"><h1>Clima en {{ ciudad }}</h1></li>
+    <li class="list-group-item"><p>Temperatura: {{ temperatura }}°C</p></li>
+    <li class="list-group-item"><p>Velocidad del Viento: {{ velocidad_viento }} m/s</p></li>
+    <li class="list-group-item"><p>Latitud: {{ latitud }}</p></li>
+    <li class="list-group-item"><p>Descripción: {{ descripcion }}</p></li>
+  </ul>
+{% endblock %}

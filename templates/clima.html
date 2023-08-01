@@ -1,0 +1,11 @@
+{% extends './form.html' %}
+
+{% block body%}
+    <h1>Aplicación del Clima</h1>
+    <form action="/clima" method="post">
+        <label for="ciudad">Ingresa una ciudad:</label>
+        <input type="text" name="ciudad" id="ciudad" value="{{ ciudad }}">
+        <input type="submit" value="Enviar">
+    </form>
+
+{% endblock %}
