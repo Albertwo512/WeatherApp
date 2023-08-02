@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='/img/logoapp.JPG') }}" alt="Logo" width="65" height="60"></a>
+          <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='/img/logoapp.JPG') }}" alt="Logo" width="65" height="60"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -26,7 +26,7 @@
                 </li>
               </ul>
               <form action="/clima" method="post" class="d-flex mt-3" role="search">
-                <input class="form-control me-2" placeholder="Otra ciudad" aria-label="Search" type="text" name="ciudad" id="ciudad" >
+                <input class="form-control me-2" placeholder="Otra ciudad" aria-label="Search" type="text" name="ciudad" id="ciudad"  required>
                 <input class="btn btn-outline-success" type="submit" value="Buscar">
             </form>
             </div>
