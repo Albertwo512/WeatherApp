@@ -1,8 +1,10 @@
 import requests
 import math
+import threading
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def index():
@@ -19,8 +21,9 @@ def index():
     longitud = data["coord"]["lon"]
 
     descripcion = data["weather"][0]["description"]
+    main = data["weather"][0]["main"]
 
-    return render_template('index.html', ciudad=ciudad, temperatura=temperatura, velocidad_viento=velocidad_viento, latitud=latitud)
+    return render_template('clima.html', ciudad=ciudad, temperatura=temperatura, velocidad_viento=velocidad_viento, latitud=latitud, longitud=longitud, descripcion=descripcion, main=main, charger=charger)
 
 @app.route('/clima', methods=['POST'])
 def clima():
@@ -37,8 +40,9 @@ def clima():
     longitud = data["coord"]["lon"]
 
     descripcion = data["weather"][0]["description"]
+    main = data["weather"][0]["main"]
 
-    return render_template('clima.html', ciudad=ciudad, temperatura=temperatura, velocidad_viento=velocidad_viento, latitud=latitud, longitud=longitud, descripcion=descripcion)
+    return render_template('clima.html', ciudad=ciudad, temperatura=temperatura, velocidad_viento=velocidad_viento, latitud=latitud, longitud=longitud, descripcion=descripcion, main=main, charger=charger)
 
 if __name__ == '__main__':
     app.run(debug = True)
