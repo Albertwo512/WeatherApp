@@ -1,6 +1,5 @@
 import requests
 import math
-import threading
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -45,4 +44,4 @@ def clima():
     return render_template('clima.html', ciudad=ciudad, temperatura=temperatura, velocidad_viento=velocidad_viento, latitud=latitud, longitud=longitud, descripcion=descripcion, main=main)
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(port = 8000)
