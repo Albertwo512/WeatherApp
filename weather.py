@@ -23,7 +23,7 @@ def index():
     descripcion = data["weather"][0]["description"]
     main = data["weather"][0]["main"]
 
-    return render_template('clima.html', ciudad=ciudad, temperatura=temperatura, velocidad_viento=velocidad_viento, latitud=latitud, longitud=longitud, descripcion=descripcion, main=main, charger=charger)
+    return render_template('clima.html', ciudad=ciudad, temperatura=temperatura, velocidad_viento=velocidad_viento, latitud=latitud, longitud=longitud, descripcion=descripcion, main=main)
 
 @app.route('/clima', methods=['POST'])
 def clima():
@@ -42,7 +42,7 @@ def clima():
     descripcion = data["weather"][0]["description"]
     main = data["weather"][0]["main"]
 
-    return render_template('clima.html', ciudad=ciudad, temperatura=temperatura, velocidad_viento=velocidad_viento, latitud=latitud, longitud=longitud, descripcion=descripcion, main=main, charger=charger)
+    return render_template('clima.html', ciudad=ciudad, temperatura=temperatura, velocidad_viento=velocidad_viento, latitud=latitud, longitud=longitud, descripcion=descripcion, main=main)
 
 if __name__ == '__main__':
     app.run(debug = True)
